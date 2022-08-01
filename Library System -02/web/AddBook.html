@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Simple Library System</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <style>
+            @import url(https://fonts.googleapis.com/css?family=Cinzel+Decorative:400,900);
+            *{
+                margin: 0;
+                padding: 0;
+                font-family: 'Cinzel Decorative', cursive;
+                box-sizing: border-box;
+            }
+            
+            body{
+                
+                height: 100vh;
+                display: grid;
+                place-items: center;
+                background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.4)),url(7.jpeg);
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                
+               
+             
+            }
+            
+            h1 {
+                font-size: 3em;
+                text-align: center;
+                color: white;
+                max-width: 600px;
+ 
+            }
+
+            
+            table{
+                
+                width: 600px;
+                opacity: 0.8;
+            }
+            
+            table,td{
+                padding: 20px;
+                border: 1px solid lightgray;
+                border-collapse: collapse;
+                text-align: center;
+                cursor: pointer;
+            }
+            
+            td{
+                font-size: 18px;
+                
+            }
+            
+            tr:nth-child(odd){
+                
+                background-color: lightblue;
+            }
+            
+            tr:nth-child(odd):hover{
+                
+                background-color: dodgerblue;
+                color:white;
+                transform: scale(1.5);
+                transition: transform 300ms ease-in;
+                
+            }
+            
+            tr:nth-child(even){
+                background-color: #ededed;
+            }
+            
+            tr:nth-child(even):hover{
+                
+                background-color: limegreen;
+                transform: scale(1.5);
+                transition: transform 300ms ease-in;
+            }
+           .button-1{
+  all: unset;
+  width: 100px;
+  height: 20px;
+  font-size: 16px;
+  background: transparent;
+  border: none;
+  position: relative;
+  color: yellow;
+  cursor: pointer;
+  z-index: 1;
+  padding: 10px 20px;
+  text-align: center;  
+ 
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-1::after,
+.button-1::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -99999;
+  transition: all .4s;
+}
+
+.button-1::before {
+  transform: translate(0%, 0%);
+  width: 100%;
+  height: 100%;
+  background: #800080;
+  border-radius: 10px;
+}
+
+.button-1::after {
+  transform: translate(10px, 10px);
+  width: 35px;
+  height: 35px;
+  background: #ffffff15;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 50px;
+}
+
+.button-1:hover::before {
+  transform: translate(5%, 20%);
+  width: 110%;
+  height: 110%;
+}
+
+.button-1:hover::after {
+  border-radius: 10px;
+  transform: translate(0, 0);
+  width: 100%;
+  height: 100%;
+}
+
+.button-1:active::after {
+  transition: 0s;
+  transform: translate(0, 5%);
+}
+
+            
+            
+            
+        </style>
+       
+    </head>
+   
+    <body>
+        <h1>- ADD BOOKS PAGE -</h1>
+ 
+
+
+        
+        
+        <!--First you add the form and after you create the table.......-->
+        
+        
+        <form action="BookServlet" method="POST">
+            
+            <!--paste here-->
+             <table border="2" width="1" cellspacing="1">
+        
+            <tbody>
+                <tr>
+                    <td>Title</td>
+                    <td><input type="text" name="title" value="" /></td>
+                </tr>
+                <tr>
+                    <td>Author</td>
+                    <td><input type="text" name="author" value="" /></td>
+                </tr>
+                <tr>
+                    <td>Publisher</td>
+                    <td><input type="text" name="pub" value="" /></td>
+                </tr>
+                <tr>
+                    
+                    <td> <button class="button-1" type="submit" role="button">ADD BOOK</button></td>
+                    <td> <button class="button-1" type="reset" role="button">CLEAR</button></td>
+                   
+                </tr>
+            </tbody>
+             </table>
+            
+        </form>
+       
+    </body>
+    
+    
+</html>
